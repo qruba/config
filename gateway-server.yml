@@ -1,5 +1,11 @@
 server:
   port: 8072
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
   
 #logstash.host: 3.136.161.26:5000
  
@@ -16,13 +22,12 @@ eureka:
     serviceUrl:
       defaultZone: http://eurekaserver:8070/eureka/
       
-spring:   
-  cloud:     
-    gateway:         
+spring:
+  cloud:
+    gateway:
       discovery.locator:
-        enabled: true           
+        enabled: true
         lowerCaseServiceId: true
-
       
 #spring:
 #  zipkin:
@@ -59,12 +64,7 @@ spring:  
 #    resource: ostock
 #    ssl-required: external
 #    use-resource-role-mappings: true    
-    
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+
         
         
         
