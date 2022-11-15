@@ -28,6 +28,14 @@ spring:
       discovery.locator:
         enabled: true
         lowerCaseServiceId: true
+      routes:
+      - id: organization-service
+        uri: lb://organization-service
+        predicates:
+        - Path=/organization/**
+        filters:
+        - RewritePath=/organization/(?<path.*), /$\{path}
+        - RemoveRequestHeader= Cookie,,Set-Cookie
       
 #spring:
 #  zipkin:
