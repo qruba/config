@@ -34,7 +34,7 @@ spring:
         predicates:
         - Path=/organization/**
         filters:
-        - RewritePath=/organization/(?<path.*), /$\{path}
+        - RewritePath=/organization/(?<path>.*), /$\{path}
         - RemoveRequestHeader= Cookie,,Set-Cookie
       
 #spring:
